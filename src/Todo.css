@@ -163,6 +163,11 @@ ul li.editMode label {
 	display: flex;
 	justify-content: center;
 }
+.picwarn2{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
 .nofound{
-	width: 200px;
+	width: 100px;
 }

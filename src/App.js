@@ -9,11 +9,12 @@ function App(props) {
   const [edtClick, setEdtClick] = useState(false);
   const [edtIndex, setEdtIndex] = useState("");
   const addtask = () => {
-    if (inp === "") {
-      alert("Field is empty");
-    } else {
+    if (inp.trim() !== "") {
       setInp("");
       props.addtodo(inp);
+      
+    } else {
+      alert("Field is empty");
     }
   };
 
@@ -36,12 +37,13 @@ function App(props) {
     }
   };
   const updatetask = () => {
-    if (inp === "") {
-      alert("Field is empty");
-    } else {
+    if (inp.trim() !== ""){
       setEdtClick(false);
       props.updatetask({ index: edtIndex, tasks: inp });
       setInp("");
+      
+    } else {
+      alert("Field is empty");
     }
   };
   const delete_inc = (e) => {
@@ -83,11 +85,14 @@ function App(props) {
           <h3>Incompleted</h3>
           <div className="picwarn">
             {props.incomplete.length === 0 ? (
+              <div className="picwarn2">
               <img
                 alt=""
                 className="nofound"
                 src="https://cdn-icons-png.flaticon.com/512/2995/2995393.png"
               />
+              <h2>No task available</h2>
+              </div>
             ) : (
               <ul id="incomplete-tasks">
                 {props.incomplete.map((i, index) => {
@@ -111,11 +116,14 @@ function App(props) {
           <h3>Completed</h3>
           <div className="picwarn">
             {props.complete.length === 0 ? (
-              <img
+             <div className="picwarn2">
+               <img
                 alt=""
                 className="nofound"
                 src="https://cdn-icons-png.flaticon.com/512/2995/2995393.png"
               />
+              <h2>No completed task available</h2>
+             </div>
             ) : (
               <ul id="completed-tasks">
                 {props.complete.map((i, index) => {
