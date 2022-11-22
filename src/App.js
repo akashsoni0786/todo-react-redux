@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { connect } from "react-redux";
-import { mappropstodispatch, mappropstostate } from "./redux/Map";
+import { mappropstodispatch, mappropstostate } from "./redux/todo/Map";
 import "./Todo.css";
 import TodoList from "./TodoList";
 
